@@ -1,0 +1,17 @@
+{
+  "name": "gdrive",
+  "version": "1.0.0",
+  "description": "Google Drive CLI",
+  "main": "index.js",
+  "scripts": {
+    "i": "./scripts/install",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": "https://github.com/dmoini/gdrive-cli.git",
+  "author": "Donovan Moini <donovanmoini@gmail.com>",
+  "license": "MIT",
+  "bin": "./index.js",
+  "dependencies": {
+    "googleapis": "^48.0.0"
+  }
+}

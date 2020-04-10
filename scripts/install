@@ -1,0 +1,14 @@
+#!/bin/bash
+
+# If gdrive has not been installed, install it
+# If gdrive has already been installed, uninstall and then install it
+
+if ! gdrive_loc="$(type -p gdrive)" || [[ -z $gdrive_loc ]]; 
+then
+  echo -e "Installing gdrive-cli\n"
+  npm install -g
+else
+  echo -e "Uninstalling and reinstalling gdrive-cli\n"
+  npm uninstall -g
+  npm install -g
+fi

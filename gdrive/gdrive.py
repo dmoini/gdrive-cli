@@ -1,4 +1,3 @@
-# TODO: create CLI via click
 import click
 import io
 import os.path

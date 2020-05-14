@@ -1,3 +1,4 @@
+# TODO: be able to take in args for `make gdrive`
 gdrive:
 	python3 gdrive/gdrive.py
 freeze:

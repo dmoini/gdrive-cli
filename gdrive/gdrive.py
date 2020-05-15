@@ -22,7 +22,6 @@ def cli():
 def download(id, name, dest):
     request = drive_service.files().export_media(
         fileId=id, mimeType='application/pdf')
-    name = name.replace(' ', '\ ')
     path = os.path.join(dest, name) + '.pdf'
     fh = io.FileIO(path, 'wb')
     downloader = MediaIoBaseDownload(fh, request)
@@ -36,15 +35,14 @@ def download(id, name, dest):
 @click.option('--page-size', '-p', 'pageSize', default=10, help="Number of files to list", required=False)
 def list(pageSize):
     results = drive_service.files().list(
-        pageSize, fields="nextPageToken, files(id, name)").execute()
+        pageSize=pageSize, fields="nextPageToken, files(id, name)").execute()
     items = results.get('files', [])
-
     if not items:
         print('No files found.')
     else:
         print('Files:')
         for item in items:
-            print(u'{0} ({1})'.format(item['name'], item['id']))
+            print(f'{item["name"]} ({item["id"]})')
 
 
 if __name__ == "__main__":

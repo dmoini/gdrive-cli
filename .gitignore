@@ -114,5 +114,5 @@ credentials.json
 token.pickle
 
 # Misc
-env
+venv
 test.py

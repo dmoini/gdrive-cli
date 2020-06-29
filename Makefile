@@ -2,8 +2,8 @@
 gdrive:
 	python3 gdrive/gdrive.py
 freeze:
-	pip3 freeze > requirements.txt
+	pip freeze > requirements.txt
 init:
-	pip3 install -r requirements.txt
+	pip install -r requirements.txt
 upgrade:
-	pip3 install --upgrade -r requirements.txt
+	pip install --upgrade -r requirements.txt
